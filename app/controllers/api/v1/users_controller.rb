@@ -31,6 +31,12 @@ class Api::V1::UsersController < ApplicationController
         matches = user.matches
         render json: matches
     end 
+
+    def login
+    end 
+
+    def signup
+    end 
     
     private
     def user_params

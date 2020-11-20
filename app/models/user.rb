@@ -15,10 +15,9 @@ class User < ApplicationRecord
 
     # to be able to display information from the join tables, we need instance methods
 
-
     def matched_dogs
         User.first.matches.map {|match| match.dog}
-    end 
+    end
 
     def breed_pref
         User.first.breed_preferences.map {|bp| bp.breed}
