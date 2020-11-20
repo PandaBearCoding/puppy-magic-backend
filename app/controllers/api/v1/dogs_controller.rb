@@ -10,15 +10,16 @@ class Api::V1::DogsController < ApplicationController
     end
 
     def create
-        # dog = Dog.find_or_create_by(dog_params)
-        dog = Dog.create!(dog_params)
+        # byebug
+        # manually find dog, if can't find create / if you can - return dog 
+        dog = Dog.find_or_create_by(name: dog_params[:name])
         render json: dog
     end
 
     def update
         dog = Dog.find(params[:id])
-            dog.update(dog_params)
-            render json: dog
+        dog.update(dog_params)
+        render json: dog
     end
 
     private
