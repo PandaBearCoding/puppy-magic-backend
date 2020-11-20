@@ -12,6 +12,12 @@ Rails.application.routes.draw do
       delete "/users/:id/matches/:id", to: "matches#destroy"
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :dogs
+    end
+  end
 end
 
 
