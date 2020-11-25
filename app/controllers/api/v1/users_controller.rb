@@ -33,6 +33,7 @@ class Api::V1::UsersController < ApplicationController
     end 
 
     def login
+        render json: User.first
     end 
 
     def signup

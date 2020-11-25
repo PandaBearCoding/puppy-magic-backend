@@ -10,9 +10,8 @@ class Api::V1::DogsController < ApplicationController
     end
 
     def create
-        # byebug
-        # manually find dog, if can't find create / if you can - return dog 
-        dog = Dog.find_or_create_by(name: dog_params[:name])
+        # dog = Dog.find_or_create_by(name: dog_params[:name])
+        dog = Dog.create!(dog_params)
         render json: dog
     end
 
@@ -24,7 +23,7 @@ class Api::V1::DogsController < ApplicationController
 
     private
     def dog_params
-        params.require(:dog).permit(:name, :profile_picture, :age, :postcode, :description, :organization, :breed, :color, :coat_length, :size, :gender, :distance, :good_with_cats, :good_with_dogs, :good_with_children, :house_trained, :spayed_neutered, :special_needs)
+        params.require(:dog).permit(:name, :profile_picture, :age, :postcode, :description, :organization, :breed, :size, :gender, :good_with_cats, :good_with_dogs, :good_with_children, :house_trained, :spayed_neutered, :special_needs, :profile_picture_two, :distance)
     end
 end
 

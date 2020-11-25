@@ -16,6 +16,7 @@ class Api::V1::MatchesController < ApplicationController
     end 
 
     def create
+        # byebug
         match = Match.create!(match_params)
         render json: match
     end
