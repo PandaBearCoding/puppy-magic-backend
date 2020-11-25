@@ -29,6 +29,6 @@ class Api::V1::MatchesController < ApplicationController
 
     private    
     def match_params
-        params.require(:match).permit(:user_id, :dog_id)
+        params.require(:match).permit(:user_id, :dog_id, :name, :profile_picture, :profile_picture_two)
     end
 end

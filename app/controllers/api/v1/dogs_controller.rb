@@ -10,8 +10,9 @@ class Api::V1::DogsController < ApplicationController
     end
 
     def create
-        # dog = Dog.find_or_create_by(name: dog_params[:name])
+        # byebug
         dog = Dog.create!(dog_params)
+        Match.create!(dog_id: dog.id, user_id: params[:user][:id])
         render json: dog
     end
 
