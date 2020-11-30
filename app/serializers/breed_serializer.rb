@@ -1,5 +1,5 @@
-class BreedSerializer < ActiveModel::Serializer
-  attributes :id, :primary 
+# class BreedSerializer < ActiveModel::Serializer
+#   attributes :id, :primary 
 
-  has_many :breed_preferences
-end
+#   has_many :breed_preferences
+# end

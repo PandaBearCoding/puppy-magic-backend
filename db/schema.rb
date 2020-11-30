@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_154610) do
+ActiveRecord::Schema.define(version: 2020_11_30_191714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_11_25_154610) do
     t.string "primary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "distance_preferences", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "distance_id"
+  end
+
+  create_table "distances", force: :cascade do |t|
+    t.integer "distance"
   end
 
   create_table "dogs", force: :cascade do |t|
@@ -81,9 +90,6 @@ ActiveRecord::Schema.define(version: 2020_11_25_154610) do
     t.integer "dog_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "profile_picture"
-    t.string "profile_picture_two"
-    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -99,7 +105,6 @@ ActiveRecord::Schema.define(version: 2020_11_25_154610) do
     t.string "housing_type"
     t.string "has_yard"
     t.string "near_park"
-    t.string "lifestyle"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

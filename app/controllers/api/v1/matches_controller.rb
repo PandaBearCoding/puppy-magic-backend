@@ -22,6 +22,8 @@ class Api::V1::MatchesController < ApplicationController
     end
 
     def destroy
+        # byebug
+        # need find by user_id and dog_id
         match = Match.find(params[:id])
         match.destroy
         render json: {}
@@ -29,6 +31,6 @@ class Api::V1::MatchesController < ApplicationController
 
     private    
     def match_params
-        params.require(:match).permit(:user_id, :dog_id, :name, :profile_picture, :profile_picture_two)
+        params.require(:match).permit(:user_id, :dog_id)
     end
 end
