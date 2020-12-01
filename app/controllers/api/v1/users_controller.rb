@@ -11,6 +11,8 @@ class Api::V1::UsersController < ApplicationController
     
     def create
         user = User.create!(user_params)
+        # BreedPreference.create!(user_id: user.id, breed_id: breed.id)
+        # EnvironmentPreference.create!(user_id: user.id, environment_id: environment.id)
         render json: user
     end
     
@@ -32,27 +34,21 @@ class Api::V1::UsersController < ApplicationController
         render json: matches
     end 
 
-    def location_preferences 
-        user = User.find(params[:id])
-        location_preferences = user.location_preferences
-        render json: location_preferences
-    end 
-
-    def distance_preferences 
-        user = User.find(params[:id])
-        distance_preferences = user.distance_preferences
-        render json: distance_preferences
-    end 
-
     def login
         render json: User.first
     end 
+
+    def logout
+        # session[:user] = nil
+        flash[:message] = "You have successfully logged out"
+        redirect_to login_path
+    end
 
     def signup
     end 
     
     private
     def user_params
-         params.require(:user).permit(:username, :password, :name, :profile_picture, :postcode, :age, :phone_number, :email, :housing_type, :has_yard, :near_park, :description, :matches, :location_preferences, :distance_preferences)
+         params.require(:user).permit(:username, :password, :name, :profile_picture, :postcode, :age, :phone_number, :email, :housing_type, :has_yard, :near_park, :description, :distance, :matches)
     end
 end

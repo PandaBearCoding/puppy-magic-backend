@@ -5,16 +5,11 @@ class User < ApplicationRecord
     # has_many :breeds, through: :breed_preferences
     # has_many :environment_preferences
     # has_many :environments, through: :environment_preferences
-    has_many :location_preferences
-    has_many :locations, through: :location_preferences
-    has_many :distance_preferences
-    has_many :distances, through: :distance_preferences
 
     accepts_nested_attributes_for :matches
     # accepts_nested_attributes_for :breed_preferences
     # accepts_nested_attributes_for :environment_preferences
-    accepts_nested_attributes_for :location_preferences
-    accepts_nested_attributes_for :distance_preferences
+
 
     # to be able to display information from the join tables, we need instance methods
 
@@ -30,11 +25,4 @@ class User < ApplicationRecord
     #     User.first.environment_preferences.map {|ep| ep.environment}
     # end
 
-    def location_pref
-        User.first.location_preferences.map {|lp| lp.location}
-    end 
-
-    def distance_pref
-        User.first.distance_preferences.map {|dp| dp.distance}
-    end
 end

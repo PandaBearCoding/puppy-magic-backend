@@ -3,29 +3,15 @@
 
 User.destroy_all
 Dog.destroy_all
-Location.destroy_all
-Distance.destroy_all
 
 ##JOIN
 Match.destroy_all
-LocationPreference.destroy_all
-DistancePreference.destroy_all
 
-user1 = User.create(username: "mrs161", password: "abc123", name: "Madeline Rose Stalter", profile_picture: "https://cdn.mainichi.jp/vol1/2020/08/31/20200831p2g00m0fe122000p/8.jpg?1", postcode: "11222", age: 25, phone_number: "315-663-7462", email: "MadelineRose16@outlook.com", description: "I exercise daily and would love to have a running buddy! I live near multiple parks in Brookyln (Transmitter, Domino, and Prospect to name a few) and regularly commute to Central Park. I love to cuddle and want a dog that also likes that.", housing_type: "Apartment", has_yard: "No", near_park: "Yes")
+user1 = User.create(username: "mrs161", password: "abc123", name: "Madeline Rose Stalter", profile_picture: "https://cdn.mainichi.jp/vol1/2020/08/31/20200831p2g00m0fe122000p/8.jpg?1", postcode: "11222", age: 25, phone_number: "315-663-7462", email: "MadelineRose16@outlook.com", description: "I exercise daily and would love to have a running buddy! I live near multiple parks in Brookyln (Transmitter, Domino, and Prospect to name a few) and regularly commute to Central Park. I love to cuddle and want a dog that also likes that.", housing_type: "Apartment", has_yard: "No", near_park: "Yes", distance: 100)
 
-dog1 = Dog.create(name: "Sidney", profile_picture: "https://blackthornkennel.com/images/puppies/Aa-Litter/IMG_7144.jpg", age: 2, postcode: "11222", description: "The sweetest girl you'll ever meet! She is happiest when she is snuggled up in your arms. She also LOVES to play fetch, but knows how to settle down while in the house. She is good with cats, dogs, and children.", organization: "Bidawea Animal Rescue", breed: "German Shepherd", size: "large", gender: "female", good_with_cats: true, good_with_dogs: true, good_with_children: true, house_trained: true, spayed_neutered: true, special_needs: false, profile_picture_two: "https://animalso.com/wp-content/uploads/2016/12/Black-German-Shepherd-1-372x238.jpg", distance: 1)
+dog1 = Dog.create(name: "Sidney", profile_picture: "https://blackthornkennel.com/images/puppies/Aa-Litter/IMG_7144.jpg", age: 2, postcode: "11222", description: "The sweetest girl you'll ever meet! She is happiest when she is snuggled up in your arms. She also LOVES to play fetch, but knows how to settle down while in the house. She is good with cats, dogs, and children.", organization: "Bidawea Animal Rescue", breed: "German Shepherd", size: "large", gender: "female", good_with_cats: true, good_with_dogs: true, good_with_children: true, house_trained: true, spayed_neutered: true, special_needs: false, distance: 1)
 
 match1 = Match.create(user_id: user1.id, dog_id: dog1.id)
-
-location1 = Location.create(postcode: "11222")
-
-locationpreference1 = LocationPreference.create(user_id: user1.id, location_id: location1.id)
-
-distance1 = Distance.create(distance: 50)
-
-distancepreference1 = DistancePreference.create(user_id: user1.id, distance_id: distance1.id)
-
-
 
 # breed1 = Breed.create(primary: "German Shepherd")
 # breed2 = Breed.create(primary: "Treeing Tennessee Brindle")

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_191714) do
+ActiveRecord::Schema.define(version: 2020_12_01_150857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_191714) do
     t.boolean "special_needs"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "profile_picture_two"
     t.string "age"
     t.integer "distance"
   end
@@ -107,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_191714) do
     t.string "near_park"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "distance"
   end
 
 end

@@ -24,7 +24,7 @@ class Api::V1::DogsController < ApplicationController
 
     private
     def dog_params
-        params.require(:dog).permit(:name, :profile_picture, :age, :postcode, :description, :organization, :breed, :size, :gender, :good_with_cats, :good_with_dogs, :good_with_children, :house_trained, :spayed_neutered, :special_needs, :profile_picture_two, :distance)
+        params.require(:dog).permit(:name, :profile_picture, :age, :postcode, :description, :organization, :breed, :size, :gender, :good_with_cats, :good_with_dogs, :good_with_children, :house_trained, :spayed_neutered, :special_needs, :distance)
     end
 end
 
